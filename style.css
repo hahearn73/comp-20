@@ -1,0 +1,9 @@
+body {background-image: url('background.jpg'); background-size: cover;}
+h1 {color: blue; text-align: center; padding: 10px; border: 2px solid #00AAFF; font-family: Verdana;}
+.section_titles {font-size: 2em; color: #FFFFFF; margin: 0px; font-family: Verdana;}
+ul.nav {font-family: Verdana; text-align: center; list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333333;}
+li.nav {float: left;}
+li.nav a {display: block; color: white; text-align: center; padding: 16px; text-decoration: none;}
+li.nav a:hover {background-color: #111111;}
+.para {color: white; font-size: 1.25em; font-family: Helvetica; margin:5px; padding:0px;}
+a {color: hotpink;}
