@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="xml_using_css.css"?>
+<tragedy>
+	<song>
+		<title>Dancing Queen</title>
+		<genre>Pop</genre>
+		<release-year>1976</release-year>
+		<artist>ABBA</artist>
+	</song>
+	<song>
+		<title>Sweet Caroline</title>
+		<genre>Soft Rock</genre>
+		<genre>Pop</genre>
+		<release-year>1969</release-year>
+		<artist>Neil Diamond</artist>
+	</song>
+	<song>
+		<title>You're The One That I Want</title>
+		<genre>Pop</genre>
+		<release-year>1978</release-year>
+		<artist>John Travolta and Olivia Newton-John</artist>
+	</song>
+	<song>
+		<title>Stayin' Alive</title>
+		<genre>Disco</genre>
+		<release-year>1977</release-year>
+		<artist>Bee Gees</artist>
+	</song>
+	<song>
+		<title>How Deep Is Your Love</title>
+		<genre>Pop</genre>
+		<release-year>1977</release-year>
+		<artist>Bee Gees</artist>
+	</song>
+	<song>
+		<title>Africa</title>
+		<genre>Pop</genre>
+		<release-year>1982</release-year>
+		<artist>Toto</artist>
+	</song>
+	<song>
+		<title>Gimme! Gimme! Gimme! (A Man After Midnight)</title>
+		<genre>Pop</genre>
+		<release-year>1979</release-year>
+		<artist>ABBA</artist>
+	</song>
+	<song>
+		<title>It's Raining Men</title>
+		<genre>EDM</genre>
+		<release-year>1982</release-year>
+		<artist>the Weather Girls</artist>
+	</song>
+	<song>
+		<title>Raining Blood</title>
+		<genre>Metal</genre>
+		<release-year>1986</release-year>
+		<artist>Slayer</artist>
+	</song>
+	<song>
+		<title>Aquarius/Let the Sunshine In</title>
+		<genre>Psychadelic Soul</genre>
+		<release-year>1969</release-year>
+		<artist>the 5th Dimension</artist>
+	</song>
+</tragedy>

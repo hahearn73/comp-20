@@ -1,0 +1,7 @@
+tragedy {color: white; background-color: black; width: 100%;}
+song {
+	color: white;
+	margin: 25px;
+}
+title, genre, release-year, artist {display: block;}
+title {font-size: 2em;}
