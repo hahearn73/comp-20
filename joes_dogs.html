@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<h1>Joe's Hotdogs</h1>
+<script>
+dogs = prompt("How many hot dogs", "12");
+fries = prompt("How many fries would you like?", "1");
+sodas = prompt("How many sodas would you like?", "1");
+subtotal = 3.75 * dogs + 2.00 * fries + 1.85 * sodas;
+discount = 0;
+if (subtotal >= 20) {
+	discount = .10 * subtotal;
+   	subtotal -= discount;
+}
+subtotal = Math.round(subtotal * 100) / 100;
+discount = Math.round(discount * 100) / 100;
+tax = Math.round((.0625 * subtotal) * 100) / 100;
+total = Math.round((tax + subtotal) * 100) / 100;
+document.write("hot dogs: " + dogs + "...$" + (dogs * 3.75) + "<br>" + "fries: " + fries + "...$" + (fries * 2.00) + "<br>" + "sodas: " + sodas + "...$" + (sodas * 1.85) + "<br>");
+if (discount > 0) {
+	document.write("discount: $" + discount + "<br>");
+}
+document.write("subtotal: $" + subtotal + "<br>" + "tax: $" + tax + "<br>" + "total: $" + total);
+</script> 
+
+</body>
+</html>
