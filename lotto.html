@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+	correct = [12, 15, 24, 35 , 48]; // correct_lucky = 3
+	pick = [];
+    unique = 0;
+    while (unique == 0) {
+    	pick[0] = Math.floor(Math.random() * 48) + 1;
+   		pick[1] = Math.floor(Math.random() * 48) + 1;
+    	pick[2] = Math.floor(Math.random() * 48) + 1;
+    	pick[3] = Math.floor(Math.random() * 48) + 1;
+    	pick[4] = Math.floor(Math.random() * 48) + 1;
+        unique = 1; // assume it is unique
+        for (i = 0; i < 4; i++) {
+        	for (j = i + 1; j < 5; j++) {
+            	if (pick[i] == pick[j]) unique = 0; // if a match is found, picks are not unique
+            }
+        }
+        
+    }
+    lucky = Math.floor(Math.random() * 18) + 1;
+    document.write("My pick: " + pick.toString() + " lucky " + lucky + "<br>");
+    pick.sort(function(a, b) {
+  		return a - b;
+	});
+    document.write("My pick sorted: " + pick.toString() + " lucky " + lucky + "<br>");
+    document.write("Winning numbers: " + correct.toString() + " lucky " + 3 + "<br>");
+    matches = 0;
+    for (i = 0; i < 5; i++) {
+    	for (j = 0; j < 5; j++) {
+        	if (pick[i] == correct[j]) matches++;
+        }
+    }
+    document.write("Numbers matching: " + matches + "<br>");
+    correct_lucky = 0;
+    if (lucky == 3) {
+    	correct_lucky = 1;
+    	document.write("Lucky ball matches<br>");
+    }
+    else
+    	document.write("Lucky ball does not match<br>");
+    winnings = 0;
+    if (matches == 0) {
+    	if (correct_lucky == 1)
+        	winnings = 4;
+    }
+    else if (matches == 1) {
+    	if (correct_lucky == 1)
+        	winnings = 6;
+    }
+    else if (matches == 2) {
+   		if (correct_lucky == 1)
+       		winnings = 25;
+        else
+        	winnings = 3;
+    }
+    else if (matches == 3) {
+    	if (correct_lucky == 1)
+        	winnings = 150;
+        else
+        	winnings = 20;
+    }
+    else if (matches == 4) {
+    	if (correct_lucky == 1)
+        	winnings = 5000;
+        else
+        	winnings = 200;
+    }
+    if (matches != 5) {
+    	document.write("Your winnings: $" + winnings);
+    }
+    else { // matches must equal 5
+    	if (correct_lucky == 1) 
+        	document.write("Your winnings: $7,000 a WEEK for LIFE");
+        else
+        	document.write("Your winnings: $25,000 a YEAR for LIFE");
+    }
+</script>
+</body>
+</html>
