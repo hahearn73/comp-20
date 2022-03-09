@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>amicable numbers</title>
+        
+        <script>
+	    function isAFactor(x,y)
+            {
+		return (y % x == 0)
+	    }
+            function calc()
+            {
+                var n1 = parseFloat(document.getElementById('n1').value);
+                var n2 = parseFloat(document.getElementById('n2').value);
+		const factors_of_n1 = [];
+		const factors_of_n2 = [];
+		var c1 = 0;
+		var c2 = 0;
+		for (var i = 0; i <= n1 / 2; i++) {
+			if (isAFactor(i, n1)) {
+				factors_of_n1[c1] = i;
+				c1++;
+			}
+		}
+		for (var i = 0; i <= n2 / 2; i++) {
+			if (isAFactor(i, n2)) {
+				factors_of_n2[c2] = i;
+				c2++;
+			}
+		}
+		var sum1 = 0;
+		for (var i = 0; i < c1; i++) {
+			sum1 += factors_of_n1[i];
+		}
+		var sum2 = 0;
+		for (var i = 0; i < c2; i++) {
+			sum2 += factors_of_n2[i];
+		}
+		if (sum1 == n2 && sum2 == n1) {
+			document.getElementById('result').value = "The numbers: " + n1 + " and " + n2 + " are amicable";
+		}
+		else {
+			document.getElementById('result').value = "The numbers: " + n1 + " and " + n2 + " are not amicable";
+        	}  
+		document.getElementById('factor1').value = "factors of " + n1 + ":" + factors_of_n1.toString();  
+		document.getElementById('factor2').value = "factors of " + n2 + ":" + factors_of_n2.toString();  
+	}
+            
+        </script>
+        
+    </head>
+    <body>
+        <h1>Input 2 integers to test for amicableness</h1>
+        <input type="text" id="n1"/><br/>
+        <input type="text" id="n2"/><br/>
+        
+        <button onclick="calc();">Amicable?</button>
+	<div>
+        	<input  size="50" type="text" id="result"/>
+	</div>
+	<div id="factors">
+		<input  size="50" type="text" id="factor1"/>
+		<input  size="50" type="text" id="factor2"/>
+	</div>
+        
+    </body>
+</html>
