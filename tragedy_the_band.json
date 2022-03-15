@@ -1,6 +1,4 @@
-{
-  "tragedy": {
-    "song": [
+[
       {
         "title": "Dancing Queen",
         "genre": "Pop",
@@ -65,5 +63,3 @@
         "artist": "the 5th Dimension"
       }
     ]
-  }
-}
