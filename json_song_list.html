@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<title>Messages</title>
+	<meta charset="utf-8"/>
+	<script>
+		function loadFile() {
+			/* Step 1: Make instance of request object...
+			...to make HTTP request after page is loaded*/
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+ 
+			// Step 2: Set the URL for the AJAX request to be the JSON file
+ 
+			request.open("GET", "https://raw.githubusercontent.com/hahearn73/comp-20/main/tragedy_the_band.json", true);
+
+			console.log("2 - opened request file");
+ 
+			// Step 3: set up event handler/callback
+
+			request.onreadystatechange = function() {
+				console.log("3 - readystatechange event fired.");
+ 
+				if (request.readyState == 4 && request.status == 200) {
+					console.log("here");
+					// Step 5: wait for done + success
+
+					result = request.responseText;
+					songs = JSON.parse(result);
+					var str_og = JSON.stringify(songs);
+					document.getElementById("raw").innerHTML = str_og;
+					var str = "<br><br>";
+					songs.forEach(function (song) {
+						str += "Song: " + song.title + "<br>Genre: " + song.genre + "<br>Release year: " + song.release + "<br>Artist: " + song.artist + "<br><br>";
+					});
+					document.getElementById("data").innerHTML = str;
+					var button = document.getElementById("button");
+					button.addEventListener("click", function(event){
+   						var final_str;
+						var genre = document.getElementById("selector").value;
+						document.getElementById("final").innerHTML += "<strong>" + genre + " songs<br></strong>";
+						songs.forEach(function (song) {
+							if (song.genre.includes(genre)) {
+								document.getElementById("final").innerHTML += "Song: " + song.title + "<br>Genre: " + song.genre + "<br>Release year: " + song.release + "<br>Artist: " + song.artist + "<br><br>";
+							}
+						});
+					});
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+
+				document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+				}
+
+				else if (request.readyState == 3) {
+
+					document.getElementById("data").innerHTML = "Too soon!  Try again";
+
+				}
+
+			}
+		// Step 4: fire off the HTTP request
+			request.send();
+			console.log("4 - Request sent");
+		}
+	</script>
+</head>
+
+
+<body onload="loadFile()">
+
+	<div id="raw"></div>
+	<div id="data">Loading...</div>
+	<label for="selector">Choose a genre:</label>
+	<select name="genre" id="selector">
+	<option value="Pop">Pop</option>
+  	<option value="Soft Rock">Soft Rock</option>
+  	<option value="Disco">Disco</option>
+  	<option value="EDM">EDM</option>
+	<option value="Psychadelic Soul">Psychadelic Soul</option>
+  	<option value="Metal">Metal</option>
+</select>
+<button id="button" type="button">submit</button>
+<div id="final"></div>
+</body>
+</html>
