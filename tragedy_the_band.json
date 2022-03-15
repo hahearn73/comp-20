@@ -2,7 +2,7 @@
       {
         "title": "Dancing Queen",
         "genre": "Pop",
-        "release-year": 1976,
+        "release": 1976,
         "artist": "ABBA"
       },
       {
@@ -11,55 +11,55 @@
           "Soft Rock",
           "Pop"
         ],
-        "release-year": 1969,
+        "release": 1969,
         "artist": "Neil Diamond"
       },
       {
         "title": "You're The One That I Want",
         "genre": "Pop",
-        "release-year": 1978,
+        "release": 1978,
         "artist": "John Travolta and Olivia Newton-John"
       },
       {
         "title": "Stayin' Alive",
         "genre": "Disco",
-        "release-year": 1977,
+        "release": 1977,
         "artist": "Bee Gees"
       },
       {
         "title": "How Deep Is Your Love",
         "genre": "Pop",
-        "release-year": 1977,
+        "release": 1977,
         "artist": "Bee Gees"
       },
       {
         "title": "Africa",
         "genre": "Pop",
-        "release-year": 1982,
+        "release": 1982,
         "artist": "Toto"
       },
       {
         "title": "Gimme! Gimme! Gimme! (A Man After Midnight)",
         "genre": "Pop",
-        "release-year": 1979,
+        "release": 1979,
         "artist": "ABBA"
       },
       {
         "title": "It's Raining Men",
         "genre": "EDM",
-        "release-year": 1982,
+        "release": 1982,
         "artist": "the Weather Girls"
       },
       {
         "title": "Raining Blood",
         "genre": "Metal",
-        "release-year": 1986,
+        "releaser": 1986,
         "artist": "Slayer"
       },
       {
         "title": "Aquarius/Let the Sunshine In",
         "genre": "Psychadelic Soul",
-        "release-year": 1969,
+        "release": 1969,
         "artist": "the 5th Dimension"
       }
     ]
