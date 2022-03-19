@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<title>Fish Data</title>
+	<meta charset="utf-8"/>
+	<script>
+		function loadFile() {
+			res = fetch("https://cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species")
+			      .then (res => res.text())
+			      .then (data => {
+   					songs = JSON.parse(data);
+					var str_og = JSON.stringify(songs);
+					var ret = "FETCHED:<br>";
+					songs.forEach(function (fish) {
+						ret += fish.Source;
+					});
+					document.getElementById("fetch").innerHTML += ret;
+   				})
+				.catch (error => console.log(error))
+			/* Step 1: Make instance of request object...
+			...to make HTTP request after page is loaded*/
+			request = new XMLHttpRequest();
+			console.log("1 - request object created");
+ 
+			// Step 2: Set the URL for the AJAX request to be the JSON file
+ 
+			request.open("GET", "https://cors-anywhere.herokuapp.com/https://www.fishwatch.gov/api/species", true);
+
+			console.log("2 - opened request file");
+ 
+			// Step 3: set up event handler/callback
+
+			request.onreadystatechange = function() {
+				console.log("3 - readystatechange event fired.");
+ 
+				if (request.readyState == 4 && request.status == 200) {
+					console.log("here");
+					// Step 5: wait for done + success
+
+					result = request.responseText;
+					songs = JSON.parse(result);
+					var str_og = JSON.stringify(songs);
+					var ret = "AJAX DATA PATTERN:<br>";
+					songs.forEach(function (fish) {
+						ret += fish.Source;
+					});
+					document.getElementById("raw").innerHTML = ret;
+				}
+				else if (request.readyState == 4 && request.status != 200) {
+
+				document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+				}
+
+				else if (request.readyState == 3) {
+
+					document.getElementById("data").innerHTML = "Too soon!  Try again";
+
+				}
+
+			}
+		// Step 4: fire off the HTTP request
+			request.send();
+			console.log("4 - Request sent");
+		}
+	</script>
+</head>
+
+
+<body onload="loadFile()">
+	<div>This API holds data on various fish species documented by FishWatch.gov which is wehre I found this API.
+	This API would be very useful for researchers sharing data about new fish species or changes in known species information.
+	It would also be useful for fishermen and fishing companies to know which fish are legal to catch and how to prepare
+	what is caught.</div>
+	<div id="fetch"></div>
+	<div id="raw">RAW:<br></div>
+</body>
+</html>
